@@ -10,7 +10,10 @@ export const Router=()=>{
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="Buttons">Buttons</Link>
+                        <Link to="/Buttons">Buttons</Link>
+                    </li>
+                    <li>
+                        <Link to="/Counters">Counters</Link>
                     </li>
                 </ul>
             </div>
