@@ -6,12 +6,12 @@
 .square{
     width: 100px;
     height: 100px;
-    font-size: 30px;
+    font-size: 64px;
     text-align: center;
     color:rgb(0, 0, 0);
     font-weight: bolder;
     padding-bottom: 25px;
-    font-size: 30px;
+
 }
 
 .b-bottom-r{
