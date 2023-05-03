@@ -1,16 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
 import './Tictactoe.css'
 import { Board } from "./Board";
 import { useState } from "react";
+//import { useEffect } from "react";
 
 const initialBoard=['','','','','','','','',''];
 
 export const TicTacToe =()=>{
     const[gameState, setGameState]= useState(initialBoard);
     const[isXTurn, setIsXTurn] = useState(true);
-    
+    const[status, setStatus] = useState('');
+
+    useEffect(() =>{
+        const winner = checkWinner();
+        if(winner){
+            setStatus(`Winner: ${winner}`);
+        }
+    },[gameState])
+
     const onSquareClick =(index)=>{
         let strings = Array.from(gameState);
+
+        if(status.includes("Winner")){
+            return;
+        }
+
         if(strings[index] !== ''){
             return;
         }
@@ -45,6 +59,7 @@ export const TicTacToe =()=>{
         <div>
             <h1>Tic-Tac-Toe</h1>
             <Board gameState={gameState} onSquareClick={onSquareClick}/>
+            {status}    
         </div>
     );
 }
